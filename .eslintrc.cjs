@@ -14,6 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "object-curly-spacing": ["error", "always"]
   },
 }

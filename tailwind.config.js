@@ -6,8 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "raleway": ["Raleway", "sans-serif"],
+      },
       colors: {
-        "primary": "#717FFF"
+        "primary": "#19191a"
       }
     },
   },
