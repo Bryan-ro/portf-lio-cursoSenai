@@ -1,0 +1,169 @@
+import { useEffect } from "react";
+import { Whatsapp } from "react-bootstrap-icons";
+import AOS from 'aos';
+import PureCounter from "@srexi/purecounterjs";
+
+
+function App() {
+  // const [isVisible, setIsVisible] = useState(false);
+
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    new PureCounter({
+      selector: ".purecounter"
+    });
+
+  }, []);
+
+
+  return (
+    <>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+
+      <div>Batata</div>
+      <div data-aos="fade-right" className="test">
+        <Whatsapp color="red" />
+        <div data-aos="fade-up">
+          <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" className="purecounter"></span>
+        </div>
+      </div>
+
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+      <div>Batata</div>
+
+    </>
+  );
+}
+
+export default App;
