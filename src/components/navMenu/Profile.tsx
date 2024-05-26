@@ -20,10 +20,10 @@ export default function Profile({ image, profileStyle, profileTitle }: ProfilePr
                 <a href="https://wa.me/5511960976085" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
                     <Whatsapp className={profileStyle === 1 ? "text-xl" : "text-lg"} />
                 </a>
-                <a href="https://wa.me/5511960976085" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
+                <a href="https://github.com/Bryan-ro" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
                     <Github className={profileStyle === 1 ? "text-xl" : "text-lg"} />
                 </a>
-                <a href="https://wa.me/5511960976085" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
+                <a href="https://www.linkedin.com/in/bryan-rocha-808293216/" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
                     <Linkedin className={profileStyle === 1 ? "text-xl" : "text-lg"} />
                 </a>
             </div>

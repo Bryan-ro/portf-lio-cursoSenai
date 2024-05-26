@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { List, X, House } from "react-bootstrap-icons";
+import { List, X, HouseDoor, Person, FileEarmark, BookHalf, Server, Envelope } from "react-bootstrap-icons";
 import Profile, { ProfileProps } from "./Profile";
+import MenuItem from "./MenuItem";
+import Footer from "./Footer";
 
 interface NavMenuProps extends ProfileProps { }
 
@@ -42,10 +44,15 @@ export default function NavMenu({ image, profileStyle, profileTitle }: NavMenuPr
                 <Profile image={image} profileStyle={profileStyle} profileTitle={profileTitle} />
 
                 <nav>
-                    <a href="#">
-                        <House />
-                    </a>
+                    <MenuItem Icon={HouseDoor} text="Início" menuLink="#" />
+                    <MenuItem Icon={Person} text="Sobre" menuLink="#" />
+                    <MenuItem Icon={FileEarmark} text="Resumo" menuLink="#" />
+                    <MenuItem Icon={BookHalf} text="Portfólio" menuLink="#" />
+                    <MenuItem Icon={Server} text="Produtos" menuLink="#" />
+                    <MenuItem Icon={Envelope} text="Produtos" menuLink="#" />
                 </nav>
+
+                <Footer />
             </header>
         </>
     );
