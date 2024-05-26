@@ -11,6 +11,9 @@ export default {
       },
       colors: {
         "primary": "#19191a"
+      },
+      backgroundImage: {
+        hero: "url(/background.png);"
       }
     },
   },
