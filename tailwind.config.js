@@ -10,7 +10,8 @@ export default {
         "raleway": ["Raleway", "sans-serif"],
       },
       colors: {
-        "primary": "#19191a"
+        "primary": "#19191a",
+        "secundary": "#c7c7c7"
       },
       backgroundImage: {
         hero: "url(/background.png);"

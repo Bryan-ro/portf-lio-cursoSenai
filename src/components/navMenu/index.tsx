@@ -36,8 +36,8 @@ export default function NavMenu({ image, profileStyle, profileTitle, menuActive,
                 <Profile image={image} profileStyle={profileStyle} profileTitle={profileTitle} />
 
                 <nav>
-                    <MenuItem Icon={HouseDoor} text="Início" menuLink="#" />
-                    <MenuItem Icon={Person} text="Sobre" menuLink="#" />
+                    <MenuItem Icon={HouseDoor} text="Início" menuLink="#hero" />
+                    <MenuItem Icon={Person} text="Sobre" menuLink="#about" />
                     <MenuItem Icon={FileEarmark} text="Resumo" menuLink="#" />
                     <MenuItem Icon={BookHalf} text="Portfólio" menuLink="#" />
                     <MenuItem Icon={Server} text="Produtos" menuLink="#" />
