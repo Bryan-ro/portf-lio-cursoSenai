@@ -7,6 +7,7 @@ import NavMenu from "../components/navMenu";
 import Section from "../components/section/Section";
 import SectionTitle from "../components/texts/SectionTitle";
 import Paragraph from "../components/texts/Paragraph";
+import Achievement from "../components/achievements/Achievement";
 
 import { Github, Whatsapp, Linkedin, Geo, Envelope, Calendar2Date, PcDisplay, Laptop, Award, CodeSlash } from "react-bootstrap-icons";
 
@@ -14,6 +15,7 @@ import logo from "/logo.png";
 
 export default function Home() {
     const [menuActive, setMenuActive] = useState(false);
+    const [activeSection, setActiveSection] = useState("hero");
 
     useEffect(() => {
         AOS.init({
@@ -33,6 +35,38 @@ export default function Home() {
         setMenuActive(!menuActive);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = document.querySelectorAll("section");
+            let newActiveSection = "";
+
+            const position = window.scrollY + 200;
+
+            for (const section of sections) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const isVisible =
+                    position >= sectionTop &&
+                    position < sectionTop + sectionHeight;
+
+
+
+                if (window.scrollY < 60) {
+                    newActiveSection = "hero";
+                } else if (isVisible) {
+                    newActiveSection = section.id;
+                    break;
+                }
+            }
+
+            setActiveSection(newActiveSection);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }), [];
+
     return (
         <div>
             <div className="bg-hero bg-no-repeat bg-cover h-screen w-screen fixed z-[-10]"></div>
@@ -42,6 +76,7 @@ export default function Home() {
                 profileTitle="Rocha Informática"
                 menuActive={menuActive}
                 toggleMenu={toggleMenu}
+                sectionActive={activeSection}
             />
 
             <main className="w-auto h-fit lg:ml-[300px] ml-0 scroll-smooth overflow-x-hidden">
@@ -57,7 +92,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <Section id="about">
+                <Section id="about" >
                     <SectionTitle text="Sobre" />
 
                     <Paragraph>Seja bem-vindo! Aqui você encontra as melhores soluções de desenvolvimento de software e manutenção de hardware. Explore nossos projetos e confira nossos incriveis computadores.</Paragraph>
@@ -92,42 +127,20 @@ export default function Home() {
 
                     <div className="flex max-sm:gap-10 sm:flex-row flex-col max-custom:justify-between mt-3">
                         <div className="max-sm:gap-10 flex lg:flex-row flex-col w-[50%] justify-around">
-                            <div className="w-56" data-aos="fade-up">
-                                <div className="flex items-center text-5xl font-bold gap-4 pt-2 pb-2">
-                                    <PcDisplay className="text-blue-600" /><h1 className="purecounter" data-purecounter-start="0" data-purecounter-end="104" data-purecounter-duration="1"></h1>
-                                </div>
-                                <p className="font-bold font-raleway text-center">Manutenções em Desktops</p>
-                            </div>
+                            <Achievement Icon={PcDisplay} counter={103} text="Manutenções em Desktops" />
 
-                            <div className="w-56" data-aos="fade-up">
-                                <div className="flex items-center text-5xl font-bold gap-4 pt-2 pb-2">
-                                    <Laptop className="text-blue-600" /><h1 className="purecounter" data-purecounter-start="0" data-purecounter-end="93" data-purecounter-duration="1"></h1>
-                                </div>
-                                <p className="font-bold font-raleway text-center">Manutenções em Notebooks</p>
-                            </div>
+                            <Achievement Icon={Laptop} counter={93} text="Manutenções em Notebooks" />
                         </div>
 
                         <div className="max-sm:gap-10 flex lg:flex-row flex-col w-[50%] justify-around">
-                            <div className="w-56" data-aos="fade-up">
-                                <div className="flex items-center text-5xl font-bold gap-4 pt-2 pb-2">
-                                    <CodeSlash className="text-blue-600" /><h1 className="purecounter" data-purecounter-start="0" data-purecounter-end="27" data-purecounter-duration="1"></h1>
-                                </div>
-                                <p className="font-bold font-raleway text-center">Softwares Desenvolvidos</p>
-                            </div>
-
-                            <div className="w-56" data-aos="fade-up">
-                                <div className="flex items-center text-5xl font-bold gap-4 pt-2 pb-2">
-                                    <Award className="text-blue-600" /><h1 className="purecounter" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"></h1>
-                                </div>
-                                <p className="font-bold font-raleway text-center">Certificações</p>
-                            </div>
+                            <Achievement Icon={CodeSlash} counter={27} text="Softwares Desenvolvidos" />
+                            <Achievement Icon={Award} counter={15} text="Certificados" />
                         </div>
-
                     </div>
                 </Section>
 
-                <Section id="Achievements" className="-mt-1 h-[2000px]">
-
+                <Section className="-mt-1 h-[2000px]">
+                    <></>
                 </Section>
             </main>
         </div>

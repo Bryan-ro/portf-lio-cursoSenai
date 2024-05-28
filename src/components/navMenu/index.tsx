@@ -6,9 +6,10 @@ import Footer from "./Footer";
 interface NavMenuProps extends ProfileProps {
     menuActive: boolean;
     toggleMenu: () => void;
+    sectionActive: string;
 }
 
-export default function NavMenu({ image, profileStyle, profileTitle, menuActive, toggleMenu }: NavMenuProps) {
+export default function NavMenu({ image, profileStyle, profileTitle, menuActive, toggleMenu, sectionActive }: NavMenuProps) {
     return (
         <>
             <div className="
@@ -36,12 +37,12 @@ export default function NavMenu({ image, profileStyle, profileTitle, menuActive,
                 <Profile image={image} profileStyle={profileStyle} profileTitle={profileTitle} />
 
                 <nav>
-                    <MenuItem Icon={HouseDoor} text="Início" menuLink="#hero" active={true} />
-                    <MenuItem Icon={Person} text="Sobre" menuLink="#about" />
-                    <MenuItem Icon={FileEarmark} text="Resumo" menuLink="#" />
-                    <MenuItem Icon={BookHalf} text="Portfólio" menuLink="#" />
-                    <MenuItem Icon={Server} text="Produtos" menuLink="#" />
-                    <MenuItem Icon={Envelope} text="Contato" menuLink="#" />
+                    <MenuItem Icon={HouseDoor} text="Início" menuLink="#hero" active={sectionActive === "hero"} />
+                    <MenuItem Icon={Person} text="Sobre" menuLink="#about" active={sectionActive === "about"} />
+                    <MenuItem Icon={FileEarmark} text="Resumo" menuLink="#" active={false} />
+                    <MenuItem Icon={BookHalf} text="Portfólio" menuLink="#" active={false} />
+                    <MenuItem Icon={Server} text="Produtos" menuLink="#" active={false} />
+                    <MenuItem Icon={Envelope} text="Contato" menuLink="#" active={false} />
                 </nav>
 
                 <Footer />
