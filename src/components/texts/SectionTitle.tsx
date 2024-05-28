@@ -25,5 +25,5 @@ export default function SectionTitle({ text }: SectionTitleProps) {
         getThreeFirstLettersOfText();
     });
 
-    return <h1 className="text-[32px] font-raleway font-extrabold text-primary mb-7"><span className="border-primary border-b-4 pb-2">{firstThreeLetters}</span>{restOfLetters}</h1>;
+    return <h1 className="text-[32px] font-raleway font-extrabold text-primary mb-7"><span className="border-blue-600 border-b-4 pb-2">{firstThreeLetters}</span>{restOfLetters}</h1>;
 }

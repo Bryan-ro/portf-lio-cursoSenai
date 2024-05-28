@@ -15,6 +15,10 @@ export default {
       },
       backgroundImage: {
         hero: "url(/background.png);"
+      },
+      screens: {
+        custom: "1500px",
+        xsm: "768px"
       }
     },
   },

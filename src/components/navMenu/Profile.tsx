@@ -17,7 +17,7 @@ export default function Profile({ image, profileStyle, profileTitle }: ProfilePr
 
 
             <div id="social-media" className={`flex justify-center  ${profileStyle === 1 ? "gap-5" : "gap-1"}  w-full`}>
-                <a href="https://wa.me/5511960976085" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
+                <a href="https://wa.me/5511912108826" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
                     <Whatsapp className={profileStyle === 1 ? "text-xl" : "text-lg"} />
                 </a>
                 <a href="https://github.com/Bryan-ro" target="_blank" className={`${profileStyle === 1 ? "bg-white w-8 h-8" : "text-white w-6 h-6"}  rounded-full flex justify-center items-center`}>
