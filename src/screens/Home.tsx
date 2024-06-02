@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { ReactTyped } from "react-typed";
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
+import "waypoints/lib/noframework.waypoints.min.js";
+
 
 import NavMenu from "../components/navMenu";
 import Section from "../components/section/Section";
 import SectionTitle from "../components/texts/SectionTitle";
 import Paragraph from "../components/texts/Paragraph";
 import Achievement from "../components/achievements/Achievement";
+import ProgressBar from "../components/progressBar/ProgressBar";
 
 import { Github, Whatsapp, Linkedin, Geo, Envelope, Calendar2Date, PcDisplay, Laptop, Award, CodeSlash } from "react-bootstrap-icons";
 
@@ -16,6 +19,7 @@ import logo from "/logo.png";
 export default function Home() {
     const [menuActive, setMenuActive] = useState(false);
     const [activeSection, setActiveSection] = useState("hero");
+    const [progressBarLoading, setProgressBarLoading] = useState(false);
 
     useEffect(() => {
         AOS.init({
@@ -67,6 +71,25 @@ export default function Home() {
         return () => window.removeEventListener("scroll", handleScroll);
     }), [];
 
+
+    useEffect(() => {
+        const statistics = document.getElementById("statistics");
+
+        if (!statistics) {
+            return;
+        }
+
+        new Waypoint({
+            element: statistics,
+            offset: "80%",
+            handler: () => {
+                console.log("entrou");
+                setProgressBarLoading(true);
+            }
+        });
+    }, []);
+
+
     return (
         <div>
             <div className="bg-hero bg-no-repeat bg-cover h-screen w-screen fixed z-[-10]"></div>
@@ -92,7 +115,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <Section id="about" >
+                <Section id="about">
                     <SectionTitle text="Sobre" />
 
                     <Paragraph>Seja bem-vindo! Aqui você encontra as melhores soluções de desenvolvimento de software e manutenção de hardware. Explore nossos projetos e confira nossos incriveis computadores.</Paragraph>
@@ -139,8 +162,21 @@ export default function Home() {
                     </div>
                 </Section>
 
-                <Section className="-mt-1 h-[2000px]">
-                    <></>
+                <Section id="statistics" className="-mt-1 h-[2000px]">
+                    <SectionTitle text="Estátisticas" />
+                    <Paragraph>Conheça os nossos percentuais de serviços e vendas mais realizados.</Paragraph>
+
+                    <div className="flex md:gap-10 max-md:flex-col mt-8">
+                        <div className="flex flex-col w-full">
+                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Notebooks" />
+                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Desktops" />
+                        </div>
+
+                        <div className="flex flex-col w-full">
+                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Desenvolvimento Web" />
+                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Desenvolvimento Mobile" />
+                        </div>
+                    </div>
                 </Section>
             </main>
         </div>
