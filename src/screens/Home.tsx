@@ -169,12 +169,12 @@ export default function Home() {
                     <div className="flex md:gap-10 max-md:flex-col mt-8">
                         <div className="flex flex-col w-full">
                             <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Notebooks" />
-                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Desktops" />
+                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={15} title="Desktops" />
                         </div>
 
                         <div className="flex flex-col w-full">
-                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Desenvolvimento Web" />
-                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={40} title="Desenvolvimento Mobile" />
+                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={60} title="Desenvolvimento Web" />
+                            <ProgressBar progressBarLoading={progressBarLoading} progressBarWidth={30} title="Desenvolvimento Mobile" />
                         </div>
                     </div>
                 </Section>
