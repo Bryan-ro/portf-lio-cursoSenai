@@ -50,6 +50,7 @@ export default function NavMenu({ image, profileStyle, profileTitle, menuActive,
                     w-10 
                     h-10
                     cursor-pointer
+                    z-50
                     "
 
                 onClick={() => {
