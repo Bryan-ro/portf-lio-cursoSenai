@@ -7,8 +7,6 @@ type ProgressBarProps = {
 }
 
 export default function ProgressBar({ progressBarLoading, progressBarWidth, title }: ProgressBarProps) {
-    console.log(progressBarWidth);
-    console.log(progressBarLoading);
     return (
         <div className="w-full p-1">
             <div className="flex justify-between">

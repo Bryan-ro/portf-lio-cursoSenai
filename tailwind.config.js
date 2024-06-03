@@ -11,7 +11,8 @@ export default {
       },
       colors: {
         "primary": "#19191a",
-        "secundary": "#c7c7c7"
+        "secundary": "#c7c7c7",
+        "tertiary": "#d9d9d9"
       },
       backgroundImage: {
         hero: "url(/background.png);"
