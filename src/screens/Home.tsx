@@ -47,7 +47,7 @@ export default function Home() {
             const sections = document.querySelectorAll("section");
             let newActiveSection = "";
 
-            const position = window.scrollY + 200;
+            const position = window.scrollY + 500;
 
             for (const section of sections) {
                 const sectionTop = section.offsetTop;
