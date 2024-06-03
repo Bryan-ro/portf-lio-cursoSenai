@@ -193,8 +193,8 @@ export default function Home() {
                     <SectionTitle text="Resumo" />
                     <Paragraph>Minhas informações Academicas e Profissionais</Paragraph>
 
-                    <div className="mt-5 flex">
-                        <div className="w-1/2">
+                    <div className="mt-5 flex max-md:flex-col gap-5">
+                        <div className="md:w-1/2 w-full">
                             <div>
                                 <ResumeTitle text="Sumário" />
 
@@ -222,7 +222,7 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="w-1/2">
+                        <div className="md:w-1/2 w-full">
                             <div>
                                 <ResumeTitle text="Experiencia Profissional" />
 
@@ -240,6 +240,10 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                </Section>
+
+                <Section>
+                    <></>
                 </Section>
             </main>
         </div >

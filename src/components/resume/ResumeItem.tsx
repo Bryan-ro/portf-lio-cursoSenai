@@ -9,7 +9,7 @@ interface ResumeItemProps {
 
 export default function ResumeItem({ title, children }: ResumeItemProps) {
     return (
-        <div className="resume-item">
+        <div className="resume-item" data-aos="fade-up">
 
             <p className="font-bold text-xl mb-3">{title.toUpperCase()}</p>
 

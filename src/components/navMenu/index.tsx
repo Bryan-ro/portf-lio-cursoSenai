@@ -59,7 +59,7 @@ export default function NavMenu({ image, profileStyle, profileTitle, menuActive,
                 {!menuActive ? <List className="text-2xl text-white w-10 h-10" /> : <X className="text-2xl text-white w-10 h-10" />}
             </div>
 
-            <header className={`select-none fixed top-0 bottom-0 lg:left-0 ${menuActive ? "left-0" : "-left-80"} bg-primary w-[300px] transition-all duration-1000`}>
+            <header className={`select-none fixed top-0 bottom-0 lg:left-0 ${menuActive ? "left-0" : "-left-80"} bg-primary w-[300px] transition-all duration-1000 z-50`}>
                 <Profile image={image} profileStyle={profileStyle} profileTitle={profileTitle} />
 
                 <nav>
