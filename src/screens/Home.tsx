@@ -29,7 +29,7 @@ export default function Home() {
     const [progressBarLoading, setProgressBarLoading] = useState(false);
 
     const isotope = useRef<Isotope>();
-    const [filterkey, setFilterKey] = useState("*");
+    const [filterkey, setFilterKey] = useState(".all");
 
     useEffect(() => {
         AOS.init({
