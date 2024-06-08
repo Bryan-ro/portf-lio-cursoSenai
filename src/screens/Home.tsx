@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ReactTyped } from "react-typed";
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
 import "waypoints/lib/noframework.waypoints.min.js";
+import Isotope from "isotope-layout";
 
 
 import NavMenu from "../components/navMenu";
@@ -14,15 +15,21 @@ import ProgressBar from "../components/progressBar/ProgressBar";
 import ResumeTitle from "../components/resume/ResumeTitle";
 import ResumeItem from "../components/resume/ResumeItem";
 import YearDiv from "../components/resume/YearDiv";
+import FilterItem from "../components/portfolio/FilterItem";
 
 import { Github, Whatsapp, Linkedin, Geo, Envelope, Calendar2Date, PcDisplay, Laptop, Award, CodeSlash } from "react-bootstrap-icons";
 
 import logo from "/logo.png";
+import pcGamer from "/PcGamer.png";
+import notebookGamer from "/notebookGamer.png";
 
 export default function Home() {
     const [menuActive, setMenuActive] = useState(false);
     const [activeSection, setActiveSection] = useState("hero");
     const [progressBarLoading, setProgressBarLoading] = useState(false);
+
+    const isotope = useRef<Isotope>();
+    const [filterkey, setFilterKey] = useState("*");
 
     useEffect(() => {
         AOS.init({
@@ -86,11 +93,35 @@ export default function Home() {
             element: statistics,
             offset: "80%",
             handler: () => {
-                console.log("entrou");
                 setProgressBarLoading(true);
             }
         });
     }, []);
+
+
+    useEffect(() => {
+        isotope.current = new Isotope(".filter-container", {
+            itemSelector: ".filter-item",
+            masonry: {
+                gutter: 30,
+                fitWidth: true
+            }
+
+        });
+
+        return () => {
+            if (isotope.current) {
+                isotope.current.destroy();
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isotope.current) {
+            isotope.current.arrange({ filter: filterkey !== ".all" ? filterkey : "*" });
+        }
+
+    }, [filterkey]);
 
 
     return (
@@ -242,10 +273,51 @@ export default function Home() {
                     </div>
                 </Section>
 
+                <Section className="bg-tertiary" id="portfolio">
+                    <SectionTitle text="Portfólio" />
+
+
+                    <div className="w-full flex justify-center mb-8" data-aos="fade-up">
+                        <div className="flex justify-evenly rounded-lg md:w-3/6 w-full cursor-pointer bg-primary text-white">
+                            {
+                                ["all", "Desktop", "Notebook", "Web", "Mobile"].map((filterButton) => {
+                                    return (
+                                        <div className="group border-r w-full text-center p-1" onClick={() => setFilterKey("." + filterButton.toLowerCase())}>
+                                            <Paragraph className={`
+                                            group-hover:text-blue-600 
+                                            group-hover:font-bold 
+                                            duration-300 
+                                            max-sm:text-sm
+                                            ${filterkey == "." + filterButton.toLowerCase() ? "text-blue-600 font-bold" : null}
+                                            `}>
+                                                {filterButton === "all" ? "Todos" : filterButton}
+                                            </Paragraph>
+                                        </div>
+                                    );
+                                })
+                            }
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center" data-aos="fade-up">
+                        <div className="filter-container">
+                            <FilterItem image={pcGamer} filterKey="desktop" />
+                            <FilterItem image={pcGamer} filterKey="desktop" />
+                            <FilterItem image={notebookGamer} filterKey="notebook" />
+                            <FilterItem image={notebookGamer} filterKey="notebook" />
+                            <FilterItem image={notebookGamer} filterKey="notebook" />
+                            <FilterItem image={pcGamer} filterKey="desktop" />
+                            <FilterItem image={pcGamer} filterKey="desktop" />
+                            <FilterItem image={pcGamer} filterKey="desktop" />
+                            <FilterItem image={pcGamer} filterKey="desktop" />
+                        </div>
+                    </div>
+                </Section>
+
                 <Section>
                     <></>
                 </Section>
             </main>
-        </div >
+        </div>
     );
 }
