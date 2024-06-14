@@ -1,6 +1,6 @@
 import "./depoiment.css";
 
-import { Quote, Quot } from "react-bootstrap-icons";
+import { Quote } from "react-bootstrap-icons";
 
 export default function Depoiment() {
     return (
