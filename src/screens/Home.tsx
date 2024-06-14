@@ -16,6 +16,9 @@ import ResumeTitle from "../components/resume/ResumeTitle";
 import ResumeItem from "../components/resume/ResumeItem";
 import YearDiv from "../components/resume/YearDiv";
 import FilterItem from "../components/portfolio/FilterItem";
+import Service from "../components/services/Service";
+import Depoiment from "../components/depoiments/Depoiment";
+
 
 import { Github, Whatsapp, Linkedin, Geo, Envelope, Calendar2Date, PcDisplay, Laptop, Award, CodeSlash } from "react-bootstrap-icons";
 
@@ -314,8 +317,28 @@ export default function Home() {
                     </div>
                 </Section>
 
-                <Section>
-                    <></>
+                <Section id="services">
+                    <SectionTitle text="Serviços" />
+                    <Paragraph>Aqui estão os nossos principais serviços de assistência técnica e desenvolvimento de software, todos projetados para atender às suas necessidades específicas. Desde diagnóstico e reparo de equipamentos até desenvolvimento de aplicativos personalizados e suporte técnico remoto, estamos comprometidos em oferecer excelência em cada interação.</Paragraph>
+
+                    <div className="mt-5 flex flex-col">
+                        <div className="flex justify-around max-md:flex-col">
+                            <Service Icon={PcDisplay} title="Manutenção de Desktops" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit." />
+                            <Service Icon={CodeSlash} title="Manutenção de Notebooks" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit." />
+                        </div>
+
+                        <div className="flex justify-around max-md:flex-col">
+                            <Service Icon={CodeSlash} title="Desenvolvimento Web" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit." />
+                            <Service Icon={CodeSlash} title="Desenvolvimento Mobile" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit." />
+                        </div>
+                    </div>
+                </Section>
+
+
+                <Section id="depoiments" className="bg-tertiary">
+                    <SectionTitle text="Depoimentos" />
+
+                    <Depoiment />
                 </Section>
             </main>
         </div>

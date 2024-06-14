@@ -9,7 +9,7 @@ interface FilterItemProps {
 
 export default function FilterItem({ image, filterKey }: FilterItemProps) {
     return (
-        <div className={`group filter-item mb-8 sm:w-96 sm:h-96 w-h-80 h-80 ${filterKey}`}>
+        <div className={`group filter-item mb-8 w-96 h-96 max-lg:w-64 max-lg:h-64 max-sm:w-80 max-sm:h-80 ${filterKey}`}>
             <div className="relative overflow-hidden w-full h-full">
                 <img src={image} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-white bg-opacity-0  group-hover:bg-opacity-25 duration-300"></div>

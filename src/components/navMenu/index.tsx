@@ -68,7 +68,7 @@ export default function NavMenu({ image, profileStyle, profileTitle, menuActive,
                     <MenuItem Icon={Person} text="Sobre" menuLink="#about" active={sectionActive === "about"} />
                     <MenuItem Icon={FileEarmark} text="Resumo" menuLink="#resume" active={sectionActive === "resume"} />
                     <MenuItem Icon={BookHalf} text="Portfólio" menuLink="#portfolio" active={sectionActive === "portfolio"} />
-                    <MenuItem Icon={Server} text="Produtos" menuLink="#" active={false} />
+                    <MenuItem Icon={Server} text="Serviços" menuLink="#services" active={sectionActive === "services"} />
                     <MenuItem Icon={Envelope} text="Contato" menuLink="#" active={false} />
                 </nav>
 
