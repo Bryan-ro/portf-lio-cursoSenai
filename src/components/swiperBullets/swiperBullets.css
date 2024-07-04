@@ -1,0 +1,5 @@
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    border: solid rgb(13, 83, 235) 2px;
+}

@@ -4,7 +4,14 @@ import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
 import "waypoints/lib/noframework.waypoints.min.js";
 import Isotope from "isotope-layout";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/autoplay";
 
 import NavMenu from "../components/navMenu";
 import Section from "../components/section/Section";
@@ -18,13 +25,22 @@ import YearDiv from "../components/resume/YearDiv";
 import FilterItem from "../components/portfolio/FilterItem";
 import Service from "../components/services/Service";
 import Depoiment from "../components/depoiments/Depoiment";
+import SwiperBullets from "../components/swiperBullets/SwiperBullets";
+import Title from "../components/texts/Title";
 
 
-import { Github, Whatsapp, Linkedin, Geo, Envelope, Calendar2Date, PcDisplay, Laptop, Award, CodeSlash } from "react-bootstrap-icons";
+import { Github, Whatsapp, Linkedin, Geo, Envelope, Calendar2Date, PcDisplay, Laptop, Award, CodeSlash, GeoAltFill } from "react-bootstrap-icons";
 
 import logo from "/logo.png";
+
 import pcGamer from "/PcGamer.png";
 import notebookGamer from "/notebookGamer.png";
+
+import Testimonial1 from "/depoiments/testimonials-1.jpg";
+import Testimonial2 from "/depoiments/testimonials-2.jpg";
+import Testimonial3 from "/depoiments/testimonials-3.jpg";
+import Testimonial4 from "/depoiments/testimonials-4.jpg";
+import Testimonial5 from "/depoiments/testimonials-5.jpg";
 
 export default function Home() {
     const [menuActive, setMenuActive] = useState(false);
@@ -337,10 +353,136 @@ export default function Home() {
 
                 <Section id="depoiments" className="bg-tertiary">
                     <SectionTitle text="Depoimentos" />
+                    <Swiper
+                        modules={[Navigation, Pagination, A11y, Autoplay]}
+                        spaceBetween={50}
+                        slidesPerView="auto"
+                        pagination={{ type: "bullets", el: ".bullets", clickable: true }}
+                        speed={600}
+                        loop={true}
+                        autoplay={{ delay: 3500, disableOnInteraction: false }}
 
-                    <Depoiment />
+                        breakpoints={{
+                            320: {
+                                slidesPerView: 1,
+                                spaceBetween: 20
+                            },
+
+                            1200: {
+                                slidesPerView: 3,
+                                spaceBetween: 20
+                            }
+                        }}
+                        className="p-5"
+                    >
+                        <SwiperSlide>
+                            <Depoiment
+                                depoiment="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis. Corporis veritatis ullam aliquam."
+                                image={Testimonial1}
+                                name="Saul Goodman"
+                                job="Advogado"
+                            />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <Depoiment
+                                depoiment="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis. Corporis veritatis ullam aliquam."
+                                image={Testimonial5}
+                                name="Luiz"
+                                job="Ex-Presidiário"
+                            />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <Depoiment
+                                depoiment="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis. Corporis veritatis ullam aliquam."
+                                image={Testimonial2}
+                                name="Michelle"
+                                job="Médica"
+                            />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <Depoiment
+                                depoiment="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis. Corporis veritatis ullam aliquam."
+                                image={Testimonial3}
+                                name="Lagertha"
+                                job="Contadora"
+                            />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <Depoiment
+                                depoiment="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis. Corporis veritatis ullam aliquam."
+                                image={Testimonial4}
+                                name="Jax Tellor"
+                                job="Policial"
+                            />
+                        </SwiperSlide>
+
+                    </Swiper>
+                    <SwiperBullets />
+                </Section>
+                <Section>
+                    <SectionTitle text="Contato" />
+                    <Paragraph>Para mais informações, entre em contato conosco!</Paragraph>
+
+                    <div className="flex gap-5 mt-5 h-[650px]">
+                        <div className="bg-[#b4b6c3] w-2/5 h-full p-5 flex flex-col justify-around">
+
+                            <div className="flex items-center gap-4">
+                                <div className="group w-12 h-12 border rounded-full bg-secundary hover:bg-primary duration-500">
+                                    <GeoAltFill className="w-full h-full p-3 group-hover:text-white duration-500" />
+                                </div>
+
+                                <div>
+                                    <Title>Endereço</Title>
+                                    <Paragraph>Cidade Dutra, São Paulo</Paragraph>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-4">
+                                <div className="group w-12 h-12 border rounded-full bg-secundary hover:bg-primary duration-500">
+                                    <GeoAltFill className="w-full h-full p-3 group-hover:text-white duration-500" />
+                                </div>
+
+                                <div>
+                                    <Title>E-mail</Title>
+                                    <Paragraph>bryangomesrocha@gmail.com</Paragraph>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-4">
+                                <div className="group w-12 h-12 border rounded-full bg-secundary hover:bg-primary duration-500">
+                                    <GeoAltFill className="w-full h-full p-3 group-hover:text-white duration-500" />
+                                </div>
+
+                                <div>
+                                    <Title>WhatsApp</Title>
+                                    <Paragraph><a href="https://api.whatsapp.com/send/?phone=5511912108826&text&type=phone_number&app_absent=0">(11) 91210-8826</a></Paragraph>
+                                </div>
+                            </div>
+
+                            <div>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1826.4957031675394!2d-46.70415201203367!3d-23.712000923110715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4fb169207619%3A0x1f2d3a533ee404d3!2sCidade%20Dutra%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1720068073823!5m2!1spt-BR!2sbr"
+                                    style={{ border: 0 }}
+                                    allowFullScreen={true}
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="w-full aspect-square"
+                                >
+                                </iframe>
+                            </div>
+
+                        </div>
+
+                        <div className="bg-[#b4b6c3] w-3/5 h-full">
+
+                        </div>
+                    </div>
                 </Section>
             </main>
-        </div>
+        </div >
     );
 }
