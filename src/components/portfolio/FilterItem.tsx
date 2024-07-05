@@ -16,11 +16,9 @@ export default function FilterItem({ image, filterKey }: FilterItemProps) {
 
                 <div className="bg-blue-600 absolute w-full h-12 -bottom-12 group-hover:-bottom-0 duration-300 flex text-white">
 
-                    <a href="" className="w-1/2 flex justify-center items-center border-r-black border-r">
+                    <a href={image} className="w-1/2 flex justify-center items-center border-r-black border-r portfolio-item" data-gallery="portfolioGallery">
                         <Plus className="h-full w-20" />
                     </a>
-
-
 
                     <a href="" className="w-1/2 flex justify-center items-center">
                         <Link className="h-full w-10" />
